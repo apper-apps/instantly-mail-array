@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { toast } from 'react-toastify';
-import Button from '@/components/atoms/Button';
-import Badge from '@/components/atoms/Badge';
-import Input from '@/components/atoms/Input';
-import Select from '@/components/atoms/Select';
-import Card from '@/components/atoms/Card';
-import MetricCard from '@/components/molecules/MetricCard';
-import ProgressRing from '@/components/molecules/ProgressRing';
-import Loading from '@/components/ui/Loading';
-import Error from '@/components/ui/Error';
-import Empty from '@/components/ui/Empty';
-import ApperIcon from '@/components/ApperIcon';
-import { emailAccountService } from '@/services/api/emailAccountService';
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { toast } from "react-toastify";
+import ApperIcon from "@/components/ApperIcon";
+import Badge from "@/components/atoms/Badge";
+import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
+import Card from "@/components/atoms/Card";
+import Input from "@/components/atoms/Input";
+import Empty from "@/components/ui/Empty";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import MetricCard from "@/components/molecules/MetricCard";
+import ProgressRing from "@/components/molecules/ProgressRing";
+import { emailAccountService } from "@/services/api/emailAccountService";
 
 const AccountsPage = () => {
   const [accounts, setAccounts] = useState([]);
@@ -126,12 +126,166 @@ const AccountsPage = () => {
     }
   };
 
-  const providerOptions = [
+const providerOptions = [
     { value: 'gmail', label: 'Gmail' },
     { value: 'outlook', label: 'Outlook' },
     { value: 'yahoo', label: 'Yahoo' },
     { value: 'custom', label: 'Custom SMTP' }
   ];
+  // Warmup Dashboard Components
+  const ReputationGauge = ({ reputation }) => {
+    const getReputationColor = (score) => {
+      if (score >= 80) return 'text-success-600';
+      if (score >= 60) return 'text-warning-600';
+      return 'text-error-600';
+    };
+
+    const getReputationBg = (score) => {
+      if (score >= 80) return 'bg-success-50';
+      if (score >= 60) return 'bg-warning-50';
+      return 'bg-error-50';
+    };
+
+    return (
+      <div className="grid grid-cols-3 gap-4">
+        <div className={`p-3 rounded-lg ${getReputationBg(reputation.deliverability)}`}>
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-medium text-gray-600">Deliverability</span>
+            <span className={`text-xs font-bold ${getReputationColor(reputation.deliverability)}`}>
+              {reputation.deliverability}%
+            </span>
+          </div>
+          <ProgressRing
+            progress={reputation.deliverability}
+            size={24}
+            strokeWidth={2}
+            className="mx-auto"
+          />
+        </div>
+
+        <div className={`p-3 rounded-lg ${getReputationBg(reputation.senderReputation)}`}>
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-medium text-gray-600">Sender Rep</span>
+            <span className={`text-xs font-bold ${getReputationColor(reputation.senderReputation)}`}>
+              {reputation.senderReputation}%
+            </span>
+          </div>
+          <ProgressRing
+            progress={reputation.senderReputation}
+            size={24}
+            strokeWidth={2}
+            className="mx-auto"
+          />
+        </div>
+
+        <div className={`p-3 rounded-lg ${getReputationBg(reputation.domainHealth)}`}>
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-medium text-gray-600">Domain Health</span>
+            <span className={`text-xs font-bold ${getReputationColor(reputation.domainHealth)}`}>
+              {reputation.domainHealth}%
+            </span>
+          </div>
+          <ProgressRing
+            progress={reputation.domainHealth}
+            size={24}
+            strokeWidth={2}
+            className="mx-auto"
+          />
+        </div>
+      </div>
+    );
+  };
+
+  const ActivityTimeline = ({ activities }) => {
+    const getActivityIcon = (type) => {
+      switch (type) {
+        case 'warmup_start': return 'Play';
+        case 'warmup_progress': return 'TrendingUp';
+        case 'warmup_complete': return 'CheckCircle';
+        case 'reputation_improve': return 'ArrowUp';
+        case 'reputation_decline': return 'ArrowDown';
+        case 'limit_increase': return 'Plus';
+        case 'limit_decrease': return 'Minus';
+        default: return 'Activity';
+      }
+    };
+
+    const getActivityColor = (status) => {
+      switch (status) {
+        case 'success': return 'text-success-600 bg-success-50';
+        case 'warning': return 'text-warning-600 bg-warning-50';
+        case 'error': return 'text-error-600 bg-error-50';
+        default: return 'text-gray-600 bg-gray-50';
+      }
+    };
+
+    return (
+      <div className="space-y-3 max-h-48 overflow-y-auto">
+        {activities.slice(0, 10).map((activity, index) => (
+          <div key={index} className="flex items-start space-x-3">
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${getActivityColor(activity.status)}`}>
+              <ApperIcon name={getActivityIcon(activity.type)} className="w-3 h-3" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs text-gray-900 font-medium">{activity.description}</p>
+              <p className="text-xs text-gray-500">
+                {new Date(activity.timestamp).toLocaleDateString()} {new Date(activity.timestamp).toLocaleTimeString()}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  const WarmupDashboard = ({ account }) => {
+    const [showDashboard, setShowDashboard] = useState(false);
+
+    if (!account.warmupEnabled) return null;
+
+    return (
+      <div className="mb-4 border-b pb-4">
+        <button
+          onClick={() => setShowDashboard(!showDashboard)}
+          className="flex items-center justify-between w-full p-3 bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg hover:from-primary-100 hover:to-primary-200 transition-all duration-200"
+        >
+          <div className="flex items-center space-x-3">
+            <ApperIcon name="BarChart3" className="w-5 h-5 text-primary-600" />
+            <span className="text-sm font-medium text-primary-700">Warmup Dashboard</span>
+          </div>
+          <ApperIcon 
+            name={showDashboard ? "ChevronUp" : "ChevronDown"} 
+            className="w-4 h-4 text-primary-600" 
+          />
+        </button>
+
+        <AnimatePresence>
+          {showDashboard && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mt-4 space-y-4"
+            >
+              {/* Reputation Gauges */}
+              <div>
+                <h4 className="text-sm font-medium text-gray-700 mb-3">Reputation Scores</h4>
+                <ReputationGauge reputation={account.reputation || {}} />
+              </div>
+
+              {/* Activity Timeline */}
+              <div>
+                <h4 className="text-sm font-medium text-gray-700 mb-3">Activity Timeline</h4>
+                <ActivityTimeline activities={account.warmupActivity || []} />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  };
+
+  // Calculate metrics
 
   // Calculate metrics
   const totalAccounts = accounts.length;
@@ -351,7 +505,9 @@ const AccountsPage = () => {
                     <Badge variant={getStatusVariant(account.status)}>
                       {account.status}
                     </Badge>
-                  </div>
+</div>
+
+                  <WarmupDashboard account={account} />
 
                   <div className="space-y-4">
                     {/* Warmup Progress */}

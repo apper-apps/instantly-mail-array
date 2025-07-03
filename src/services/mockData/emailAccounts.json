@@ -8,6 +8,43 @@
     "sentToday": 45,
     "warmupEnabled": true,
     "warmupProgress": 75,
+    "reputation": {
+      "deliverability": 85,
+      "senderReputation": 78,
+      "domainHealth": 92
+    },
+    "warmupActivity": [
+      {
+        "timestamp": "2023-12-15T12:00:00.000Z",
+        "type": "reputation_improve",
+        "status": "success",
+        "description": "Sender reputation improved by 5 points"
+      },
+      {
+        "timestamp": "2023-12-14T09:30:00.000Z",
+        "type": "warmup_progress",
+        "status": "success",
+        "description": "Warmup progress reached 75%"
+      },
+      {
+        "timestamp": "2023-12-13T14:15:00.000Z",
+        "type": "limit_increase",
+        "status": "success",
+        "description": "Daily limit increased to 100 emails"
+      },
+      {
+        "timestamp": "2023-12-10T08:00:00.000Z",
+        "type": "warmup_progress",
+        "status": "success",
+        "description": "Warmup progress reached 70%"
+      },
+      {
+        "timestamp": "2023-11-01T08:00:00.000Z",
+        "type": "warmup_start",
+        "status": "success",
+        "description": "Email warmup process started"
+      }
+    ],
     "createdAt": "2023-11-01T08:00:00.000Z",
     "updatedAt": "2023-12-15T12:00:00.000Z"
   },
@@ -20,6 +57,43 @@
     "sentToday": 32,
     "warmupEnabled": true,
     "warmupProgress": 90,
+    "reputation": {
+      "deliverability": 95,
+      "senderReputation": 88,
+      "domainHealth": 91
+    },
+    "warmupActivity": [
+      {
+        "timestamp": "2023-12-15T10:45:00.000Z",
+        "type": "reputation_improve",
+        "status": "success",
+        "description": "Deliverability score reached 95%"
+      },
+      {
+        "timestamp": "2023-12-12T16:20:00.000Z",
+        "type": "warmup_progress",
+        "status": "success",
+        "description": "Warmup progress reached 90%"
+      },
+      {
+        "timestamp": "2023-12-08T11:30:00.000Z",
+        "type": "reputation_improve",
+        "status": "success",
+        "description": "Sender reputation improved to 88%"
+      },
+      {
+        "timestamp": "2023-11-15T13:00:00.000Z",
+        "type": "warmup_progress",
+        "status": "success",
+        "description": "Warmup progress reached 80%"
+      },
+      {
+        "timestamp": "2023-11-05T09:30:00.000Z",
+        "type": "warmup_start",
+        "status": "success",
+        "description": "Email warmup process started"
+      }
+    ],
     "createdAt": "2023-11-05T09:30:00.000Z",
     "updatedAt": "2023-12-15T10:45:00.000Z"
   },
@@ -32,6 +106,43 @@
     "sentToday": 15,
     "warmupEnabled": true,
     "warmupProgress": 25,
+    "reputation": {
+      "deliverability": 65,
+      "senderReputation": 58,
+      "domainHealth": 72
+    },
+    "warmupActivity": [
+      {
+        "timestamp": "2023-12-15T09:20:00.000Z",
+        "type": "warmup_progress",
+        "status": "warning",
+        "description": "Warmup progress slow - 25% after 35 days"
+      },
+      {
+        "timestamp": "2023-12-10T14:45:00.000Z",
+        "type": "reputation_decline",
+        "status": "warning",
+        "description": "Sender reputation declined by 2 points"
+      },
+      {
+        "timestamp": "2023-12-05T10:30:00.000Z",
+        "type": "warmup_progress",
+        "status": "success",
+        "description": "Warmup progress reached 20%"
+      },
+      {
+        "timestamp": "2023-11-20T12:00:00.000Z",
+        "type": "warmup_progress",
+        "status": "success",
+        "description": "Warmup progress reached 15%"
+      },
+      {
+        "timestamp": "2023-11-10T14:00:00.000Z",
+        "type": "warmup_start",
+        "status": "success",
+        "description": "Email warmup process started"
+      }
+    ],
     "createdAt": "2023-11-10T14:00:00.000Z",
     "updatedAt": "2023-12-15T09:20:00.000Z"
   },
@@ -44,6 +155,43 @@
     "sentToday": 78,
     "warmupEnabled": false,
     "warmupProgress": 100,
+    "reputation": {
+      "deliverability": 98,
+      "senderReputation": 95,
+      "domainHealth": 97
+    },
+    "warmupActivity": [
+      {
+        "timestamp": "2023-12-01T15:00:00.000Z",
+        "type": "warmup_complete",
+        "status": "success",
+        "description": "Email warmup process completed successfully"
+      },
+      {
+        "timestamp": "2023-11-25T10:30:00.000Z",
+        "type": "reputation_improve",
+        "status": "success",
+        "description": "All reputation metrics above 95%"
+      },
+      {
+        "timestamp": "2023-11-15T14:20:00.000Z",
+        "type": "limit_increase",
+        "status": "success",
+        "description": "Daily limit increased to 200 emails"
+      },
+      {
+        "timestamp": "2023-11-01T12:00:00.000Z",
+        "type": "warmup_progress",
+        "status": "success",
+        "description": "Warmup progress reached 95%"
+      },
+      {
+        "timestamp": "2023-10-15T11:00:00.000Z",
+        "type": "warmup_start",
+        "status": "success",
+        "description": "Email warmup process started"
+      }
+    ],
     "smtpHost": "smtp.company.com",
     "smtpPort": 587,
     "createdAt": "2023-10-15T11:00:00.000Z",
