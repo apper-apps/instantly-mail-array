@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "email": "sales@company.com",
+    "provider": "gmail",
+    "status": "connected",
+    "dailyLimit": 100,
+    "sentToday": 45,
+    "warmupEnabled": true,
+    "warmupProgress": 75,
+    "createdAt": "2023-11-01T08:00:00.000Z",
+    "updatedAt": "2023-12-15T12:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "email": "outreach@company.com",
+    "provider": "outlook",
+    "status": "connected",
+    "dailyLimit": 80,
+    "sentToday": 32,
+    "warmupEnabled": true,
+    "warmupProgress": 90,
+    "createdAt": "2023-11-05T09:30:00.000Z",
+    "updatedAt": "2023-12-15T10:45:00.000Z"
+  },
+  {
+    "Id": 3,
+    "email": "team@company.com",
+    "provider": "gmail",
+    "status": "warming",
+    "dailyLimit": 50,
+    "sentToday": 15,
+    "warmupEnabled": true,
+    "warmupProgress": 25,
+    "createdAt": "2023-11-10T14:00:00.000Z",
+    "updatedAt": "2023-12-15T09:20:00.000Z"
+  },
+  {
+    "Id": 4,
+    "email": "support@company.com",
+    "provider": "custom",
+    "status": "connected",
+    "dailyLimit": 200,
+    "sentToday": 78,
+    "warmupEnabled": false,
+    "warmupProgress": 100,
+    "smtpHost": "smtp.company.com",
+    "smtpPort": 587,
+    "createdAt": "2023-10-15T11:00:00.000Z",
+    "updatedAt": "2023-12-15T16:30:00.000Z"
+  }
+]

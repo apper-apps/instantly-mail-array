@@ -1,0 +1,192 @@
+[
+  {
+    "Id": 1,
+    "email": "john.doe@techcorp.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "company": "TechCorp Inc",
+    "title": "VP of Sales",
+    "phone": "+1-555-0123",
+    "website": "https://techcorp.com",
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "status": "active",
+    "customFields": {
+      "industry": "Technology",
+      "employees": "500-1000",
+      "revenue": "$50M-$100M"
+    },
+    "createdAt": "2023-11-15T09:00:00.000Z",
+    "updatedAt": "2023-11-15T09:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "email": "sarah.johnson@innovate.co",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "company": "Innovate Co",
+    "title": "Marketing Director",
+    "phone": "+1-555-0456",
+    "website": "https://innovate.co",
+    "linkedin": "https://linkedin.com/in/sarahjohnson",
+    "status": "contacted",
+    "customFields": {
+      "industry": "Marketing",
+      "employees": "100-500",
+      "revenue": "$10M-$50M"
+    },
+    "createdAt": "2023-11-16T10:30:00.000Z",
+    "updatedAt": "2023-12-01T14:20:00.000Z"
+  },
+  {
+    "Id": 3,
+    "email": "mike.chen@startupxyz.com",
+    "firstName": "Mike",
+    "lastName": "Chen",
+    "company": "StartupXYZ",
+    "title": "CEO",
+    "phone": "+1-555-0789",
+    "website": "https://startupxyz.com",
+    "linkedin": "https://linkedin.com/in/mikechen",
+    "status": "replied",
+    "customFields": {
+      "industry": "SaaS",
+      "employees": "10-50",
+      "revenue": "$1M-$10M"
+    },
+    "createdAt": "2023-11-17T11:45:00.000Z",
+    "updatedAt": "2023-12-03T16:30:00.000Z"
+  },
+  {
+    "Id": 4,
+    "email": "lisa.wang@enterprise.org",
+    "firstName": "Lisa",
+    "lastName": "Wang",
+    "company": "Enterprise Solutions",
+    "title": "CTO",
+    "phone": "+1-555-0321",
+    "website": "https://enterprise.org",
+    "linkedin": "https://linkedin.com/in/lisawang",
+    "status": "active",
+    "customFields": {
+      "industry": "Enterprise Software",
+      "employees": "1000+",
+      "revenue": "$100M+"
+    },
+    "createdAt": "2023-11-18T13:00:00.000Z",
+    "updatedAt": "2023-11-18T13:00:00.000Z"
+  },
+  {
+    "Id": 5,
+    "email": "david.brown@consulting.net",
+    "firstName": "David",
+    "lastName": "Brown",
+    "company": "Brown Consulting",
+    "title": "Managing Partner",
+    "phone": "+1-555-0654",
+    "website": "https://consulting.net",
+    "linkedin": "https://linkedin.com/in/davidbrown",
+    "status": "bounced",
+    "customFields": {
+      "industry": "Consulting",
+      "employees": "50-100",
+      "revenue": "$5M-$10M"
+    },
+    "createdAt": "2023-11-19T14:15:00.000Z",
+    "updatedAt": "2023-12-05T09:45:00.000Z"
+  },
+  {
+    "Id": 6,
+    "email": "emma.davis@fintech.io",
+    "firstName": "Emma",
+    "lastName": "Davis",
+    "company": "FinTech Solutions",
+    "title": "Head of Product",
+    "phone": "+1-555-0987",
+    "website": "https://fintech.io",
+    "linkedin": "https://linkedin.com/in/emmadavis",
+    "status": "active",
+    "customFields": {
+      "industry": "Financial Technology",
+      "employees": "200-500",
+      "revenue": "$20M-$50M"
+    },
+    "createdAt": "2023-11-20T15:30:00.000Z",
+    "updatedAt": "2023-11-20T15:30:00.000Z"
+  },
+  {
+    "Id": 7,
+    "email": "alex.rodriguez@healthcare.com",
+    "firstName": "Alex",
+    "lastName": "Rodriguez",
+    "company": "Healthcare Innovations",
+    "title": "VP of Operations",
+    "phone": "+1-555-0147",
+    "website": "https://healthcare.com",
+    "linkedin": "https://linkedin.com/in/alexrodriguez",
+    "status": "contacted",
+    "customFields": {
+      "industry": "Healthcare",
+      "employees": "500-1000",
+      "revenue": "$50M-$100M"
+    },
+    "createdAt": "2023-11-21T16:45:00.000Z",
+    "updatedAt": "2023-12-07T11:20:00.000Z"
+  },
+  {
+    "Id": 8,
+    "email": "jennifer.lee@ecommerce.shop",
+    "firstName": "Jennifer",
+    "lastName": "Lee",
+    "company": "E-commerce Plus",
+    "title": "Growth Manager",
+    "phone": "+1-555-0258",
+    "website": "https://ecommerce.shop",
+    "linkedin": "https://linkedin.com/in/jenniferlee",
+    "status": "replied",
+    "customFields": {
+      "industry": "E-commerce",
+      "employees": "100-200",
+      "revenue": "$10M-$20M"
+    },
+    "createdAt": "2023-11-22T17:00:00.000Z",
+    "updatedAt": "2023-12-08T13:40:00.000Z"
+  },
+  {
+    "Id": 9,
+    "email": "robert.wilson@manufacturing.biz",
+    "firstName": "Robert",
+    "lastName": "Wilson",
+    "company": "Wilson Manufacturing",
+    "title": "Plant Manager",
+    "phone": "+1-555-0369",
+    "website": "https://manufacturing.biz",
+    "linkedin": "https://linkedin.com/in/robertwilson",
+    "status": "unsubscribed",
+    "customFields": {
+      "industry": "Manufacturing",
+      "employees": "200-500",
+      "revenue": "$25M-$50M"
+    },
+    "createdAt": "2023-11-23T18:15:00.000Z",
+    "updatedAt": "2023-12-10T10:00:00.000Z"
+  },
+  {
+    "Id": 10,
+    "email": "amanda.taylor@education.edu",
+    "firstName": "Amanda",
+    "lastName": "Taylor",
+    "company": "Taylor Education",
+    "title": "Director of Technology",
+    "phone": "+1-555-0741",
+    "website": "https://education.edu",
+    "linkedin": "https://linkedin.com/in/amandataylor",
+    "status": "active",
+    "customFields": {
+      "industry": "Education",
+      "employees": "100-500",
+      "revenue": "$5M-$15M"
+    },
+    "createdAt": "2023-11-24T19:30:00.000Z",
+    "updatedAt": "2023-11-24T19:30:00.000Z"
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "Id": 1,
+    "campaignId": 1,
+    "leadId": 3,
+    "subject": "Re: Quick question about StartupXYZ's Q4 planning",
+    "status": "replied",
+    "messages": [
+      {
+        "id": 1,
+        "from": "sales@company.com",
+        "to": "mike.chen@startupxyz.com",
+        "subject": "Quick question about StartupXYZ's Q4 planning",
+        "body": "Hi Mike,\n\nI noticed StartupXYZ has been growing rapidly this year. Are you planning any major initiatives for Q4?\n\nI'd love to share how we've helped similar companies scale their operations.\n\nBest regards,\nSales Team",
+        "timestamp": "2023-12-01T10:00:00.000Z",
+        "type": "sent"
+      },
+      {
+        "id": 2,
+        "from": "mike.chen@startupxyz.com",
+        "to": "sales@company.com",
+        "subject": "Re: Quick question about StartupXYZ's Q4 planning",
+        "body": "Hi there,\n\nThanks for reaching out! Yes, we're definitely planning some major initiatives for Q4. We're looking to scale our operations and could use some help.\n\nWould love to learn more about your solutions. Are you available for a call next week?\n\nBest,\nMike",
+        "timestamp": "2023-12-01T14:30:00.000Z",
+        "type": "received"
+      }
+    ],
+    "createdAt": "2023-12-01T10:00:00.000Z",
+    "updatedAt": "2023-12-01T14:30:00.000Z"
+  },
+  {
+    "Id": 2,
+    "campaignId": 1,
+    "leadId": 2,
+    "subject": "Following up on Innovate Co's Q4 plans",
+    "status": "unread",
+    "messages": [
+      {
+        "id": 1,
+        "from": "sales@company.com",
+        "to": "sarah.johnson@innovate.co",
+        "subject": "Quick question about Innovate Co's Q4 planning",
+        "body": "Hi Sarah,\n\nI noticed Innovate Co has been growing rapidly this year. Are you planning any major initiatives for Q4?\n\nI'd love to share how we've helped similar companies scale their operations.\n\nBest regards,\nSales Team",
+        "timestamp": "2023-12-02T09:00:00.000Z",
+        "type": "sent"
+      },
+      {
+        "id": 2,
+        "from": "sales@company.com",
+        "to": "sarah.johnson@innovate.co",
+        "subject": "Following up on Innovate Co's Q4 plans",
+        "body": "Hi Sarah,\n\nI wanted to follow up on my previous message about Q4 planning.\n\nWould you be interested in a quick 15-minute call to discuss how we can help Innovate Co achieve its goals?\n\nBest,\nSales Team",
+        "timestamp": "2023-12-05T11:00:00.000Z",
+        "type": "sent"
+      },
+      {
+        "id": 3,
+        "from": "sarah.johnson@innovate.co",
+        "to": "sales@company.com",
+        "subject": "Re: Following up on Innovate Co's Q4 plans",
+        "body": "Hi,\n\nThanks for the follow-up. I'm interested in learning more about your solutions.\n\nCould we schedule a call for next Tuesday at 2 PM?\n\nBest,\nSarah",
+        "timestamp": "2023-12-05T15:20:00.000Z",
+        "type": "received"
+      }
+    ],
+    "createdAt": "2023-12-02T09:00:00.000Z",
+    "updatedAt": "2023-12-05T15:20:00.000Z"
+  },
+  {
+    "Id": 3,
+    "campaignId": 2,
+    "leadId": 8,
+    "subject": "Re: See our new features in action",
+    "status": "positive",
+    "messages": [
+      {
+        "id": 1,
+        "from": "product@company.com",
+        "to": "jennifer.lee@ecommerce.shop",
+        "subject": "See our new features in action",
+        "body": "Hi Jennifer,\n\nWe've just launched some exciting new features that I think E-commerce Plus would find valuable.\n\nWould you like to see a quick demo?\n\nBest,\nProduct Team",
+        "timestamp": "2023-11-20T10:00:00.000Z",
+        "type": "sent"
+      },
+      {
+        "id": 2,
+        "from": "jennifer.lee@ecommerce.shop",
+        "to": "product@company.com",
+        "subject": "Re: See our new features in action",
+        "body": "Hi,\n\nYes, I'd love to see a demo! These new features sound exactly like what we need.\n\nI'm available this Thursday or Friday afternoon. Let me know what works best for you.\n\nThanks,\nJennifer",
+        "timestamp": "2023-11-20T16:45:00.000Z",
+        "type": "received"
+      }
+    ],
+    "createdAt": "2023-11-20T10:00:00.000Z",
+    "updatedAt": "2023-11-20T16:45:00.000Z"
+  },
+  {
+    "Id": 4,
+    "campaignId": 3,
+    "leadId": 9,
+    "subject": "Re: 🎄 Special holiday offer for Wilson Manufacturing",
+    "status": "negative",
+    "messages": [
+      {
+        "id": 1,
+        "from": "marketing@company.com",
+        "to": "robert.wilson@manufacturing.biz",
+        "subject": "🎄 Special holiday offer for Wilson Manufacturing",
+        "body": "Hi Robert,\n\nThe holidays are here and we're offering a special discount just for Wilson Manufacturing!\n\nGet 30% off our annual plans - valid until December 31st.\n\nInterested in learning more?\n\nHappy holidays,\nMarketing Team",
+        "timestamp": "2023-11-25T09:00:00.000Z",
+        "type": "sent"
+      },
+      {
+        "id": 2,
+        "from": "robert.wilson@manufacturing.biz",
+        "to": "marketing@company.com",
+        "subject": "Re: 🎄 Special holiday offer for Wilson Manufacturing",
+        "body": "Hi,\n\nThanks for the offer, but we're not interested at this time. We've already committed to another solution.\n\nPlease remove me from your mailing list.\n\nBest,\nRobert",
+        "timestamp": "2023-11-25T11:30:00.000Z",
+        "type": "received"
+      }
+    ],
+    "createdAt": "2023-11-25T09:00:00.000Z",
+    "updatedAt": "2023-11-25T11:30:00.000Z"
+  },
+  {
+    "Id": 5,
+    "campaignId": 1,
+    "leadId": 4,
+    "subject": "Quick question about Enterprise Solutions's Q4 planning",
+    "status": "read",
+    "messages": [
+      {
+        "id": 1,
+        "from": "sales@company.com",
+        "to": "lisa.wang@enterprise.org",
+        "subject": "Quick question about Enterprise Solutions's Q4 planning",
+        "body": "Hi Lisa,\n\nI noticed Enterprise Solutions has been growing rapidly this year. Are you planning any major initiatives for Q4?\n\nI'd love to share how we've helped similar companies scale their operations.\n\nBest regards,\nSales Team",
+        "timestamp": "2023-12-03T10:00:00.000Z",
+        "type": "sent"
+      }
+    ],
+    "createdAt": "2023-12-03T10:00:00.000Z",
+    "updatedAt": "2023-12-03T10:00:00.000Z"
+  }
+]

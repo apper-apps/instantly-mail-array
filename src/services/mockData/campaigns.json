@@ -1,0 +1,168 @@
+[
+  {
+    "Id": 1,
+    "name": "Q4 Sales Outreach",
+    "description": "End-of-year sales campaign targeting enterprise clients",
+    "status": "active",
+    "emailSequence": [
+      {
+        "id": 1,
+        "subject": "Quick question about {{company}}'s Q4 planning",
+        "body": "Hi {{firstName}},\n\nI noticed {{company}} has been growing rapidly this year. Are you planning any major initiatives for Q4?\n\nI'd love to share how we've helped similar companies scale their operations.\n\nBest regards,\nSales Team",
+        "delay": 0,
+        "delayUnit": "days"
+      },
+      {
+        "id": 2,
+        "subject": "Following up on {{company}}'s Q4 plans",
+        "body": "Hi {{firstName}},\n\nI wanted to follow up on my previous message about Q4 planning.\n\nWould you be interested in a quick 15-minute call to discuss how we can help {{company}} achieve its goals?\n\nBest,\nSales Team",
+        "delay": 3,
+        "delayUnit": "days"
+      }
+    ],
+    "leads": [1, 2, 3, 4, 5],
+    "schedule": {
+      "timezone": "America/New_York",
+      "sendingDays": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "sendingHours": { "start": 9, "end": 17 },
+      "dailyLimit": 50
+    },
+    "settings": {
+      "trackOpens": true,
+      "trackClicks": true,
+      "unsubscribeLink": true,
+      "spamCheck": true
+    },
+    "metrics": {
+      "sent": 245,
+      "opened": 98,
+      "clicked": 23,
+      "replied": 12,
+      "bounced": 5,
+      "unsubscribed": 2
+    },
+    "createdAt": "2023-12-01T10:00:00.000Z",
+    "updatedAt": "2023-12-15T15:30:00.000Z"
+  },
+  {
+    "Id": 2,
+    "name": "Product Demo Campaign",
+    "description": "Showcasing our new product features to potential customers",
+    "status": "paused",
+    "emailSequence": [
+      {
+        "id": 1,
+        "subject": "See our new features in action",
+        "body": "Hi {{firstName}},\n\nWe've just launched some exciting new features that I think {{company}} would find valuable.\n\nWould you like to see a quick demo?\n\nBest,\nProduct Team",
+        "delay": 0,
+        "delayUnit": "days"
+      }
+    ],
+    "leads": [6, 7, 8],
+    "schedule": {
+      "timezone": "UTC",
+      "sendingDays": ["tuesday", "wednesday", "thursday"],
+      "sendingHours": { "start": 10, "end": 16 },
+      "dailyLimit": 30
+    },
+    "settings": {
+      "trackOpens": true,
+      "trackClicks": true,
+      "unsubscribeLink": true,
+      "spamCheck": true
+    },
+    "metrics": {
+      "sent": 156,
+      "opened": 67,
+      "clicked": 18,
+      "replied": 8,
+      "bounced": 3,
+      "unsubscribed": 1
+    },
+    "createdAt": "2023-11-15T08:00:00.000Z",
+    "updatedAt": "2023-12-10T12:00:00.000Z"
+  },
+  {
+    "Id": 3,
+    "name": "Holiday Special Offers",
+    "description": "Holiday season promotional campaign",
+    "status": "completed",
+    "emailSequence": [
+      {
+        "id": 1,
+        "subject": "🎄 Special holiday offer for {{company}}",
+        "body": "Hi {{firstName}},\n\nThe holidays are here and we're offering a special discount just for {{company}}!\n\nGet 30% off our annual plans - valid until December 31st.\n\nInterested in learning more?\n\nHappy holidays,\nMarketing Team",
+        "delay": 0,
+        "delayUnit": "days"
+      },
+      {
+        "id": 2,
+        "subject": "Last chance: Holiday offer expires soon",
+        "body": "Hi {{firstName}},\n\nJust a friendly reminder that our holiday offer expires in 3 days.\n\nDon't miss out on 30% off - this is our biggest discount of the year!\n\nReady to get started?\n\nBest,\nMarketing Team",
+        "delay": 7,
+        "delayUnit": "days"
+      }
+    ],
+    "leads": [9, 10, 11, 12],
+    "schedule": {
+      "timezone": "America/Los_Angeles",
+      "sendingDays": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "sendingHours": { "start": 8, "end": 18 },
+      "dailyLimit": 75
+    },
+    "settings": {
+      "trackOpens": true,
+      "trackClicks": true,
+      "unsubscribeLink": true,
+      "spamCheck": true
+    },
+    "metrics": {
+      "sent": 320,
+      "opened": 145,
+      "clicked": 42,
+      "replied": 18,
+      "bounced": 8,
+      "unsubscribed": 3
+    },
+    "createdAt": "2023-11-20T09:00:00.000Z",
+    "updatedAt": "2023-12-31T23:59:59.000Z"
+  },
+  {
+    "Id": 4,
+    "name": "New Year Follow-up",
+    "description": "Following up with prospects after the holidays",
+    "status": "draft",
+    "emailSequence": [
+      {
+        "id": 1,
+        "subject": "Happy New Year! Let's discuss {{company}}'s 2024 goals",
+        "body": "Hi {{firstName}},\n\nHappy New Year! I hope you had a wonderful holiday season.\n\nAs we start 2024, I'd love to learn about {{company}}'s priorities for the year.\n\nWould you be open to a brief conversation?\n\nBest wishes,\nSales Team",
+        "delay": 0,
+        "delayUnit": "days"
+      }
+    ],
+    "leads": [13, 14, 15],
+    "schedule": {
+      "timezone": "UTC",
+      "sendingDays": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+      "sendingHours": { "start": 9, "end": 17 },
+      "dailyLimit": 40
+    },
+    "settings": {
+      "trackOpens": true,
+      "trackClicks": true,
+      "unsubscribeLink": true,
+      "spamCheck": true
+    },
+    "metrics": {
+      "sent": 0,
+      "opened": 0,
+      "clicked": 0,
+      "replied": 0,
+      "bounced": 0,
+      "unsubscribed": 0
+    },
+    "createdAt": "2024-01-02T10:00:00.000Z",
+    "updatedAt": "2024-01-02T10:00:00.000Z"
+  }
+]
