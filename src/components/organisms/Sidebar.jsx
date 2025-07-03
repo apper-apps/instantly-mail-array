@@ -81,14 +81,14 @@ const navigation = [
               onClick={logout}
               className="p-1 rounded hover:bg-gray-100 transition-colors"
               title="Logout"
-            >
+>
               <ApperIcon name="LogOut" className="w-4 h-4 text-gray-600" />
             </button>
           </div>
+        </div>
       </div>
     </div>
   );
-
   // Mobile Sidebar
   const MobileSidebar = () => (
     <AnimatePresence>
