@@ -74,7 +74,7 @@ const LeadImporter = ({ onImport, onClose }) => {
     setMapping(prev => ({ ...prev, [header]: field }));
   };
 
-  const handleImport = () => {
+const handleImport = () => {
     if (!csvData || !mapping.email) {
       alert('Please map the email field');
       return;
@@ -212,13 +212,24 @@ const LeadImporter = ({ onImport, onClose }) => {
                 exit={{ opacity: 0, x: 20 }}
                 className="space-y-6"
               >
-                <div>
+<div>
                   <h3 className="text-lg font-medium text-gray-900 mb-4">
                     Map CSV columns to lead fields
                   </h3>
                   <p className="text-gray-600 mb-6">
                     Match your CSV columns with our lead fields. The email field is required.
                   </p>
+                  <div className="bg-primary-50 border border-primary-200 rounded-lg p-4 mb-6">
+                    <div className="flex items-center">
+                      <ApperIcon name="Info" className="w-5 h-5 text-primary-600 mr-2" />
+                      <div>
+                        <p className="text-sm font-medium text-primary-900">Email Validation Recommended</p>
+                        <p className="text-sm text-primary-700">
+                          Consider validating your email list using our Email Validator before importing to ensure better deliverability.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="space-y-4">

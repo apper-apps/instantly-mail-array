@@ -57,8 +57,50 @@ class LeadService {
     if (index === -1) {
       throw new Error('Lead not found');
     }
-    this.leads.splice(index, 1);
+this.leads.splice(index, 1);
     return true;
+  }
+
+  async bulkImport(leads) {
+    await this.delay();
+    const importedLeads = leads.map((leadData, index) => {
+      const newId = Math.max(...this.leads.map(l => l.Id), 0) + index + 1;
+      return {
+        Id: newId,
+        ...leadData,
+        status: leadData.status || 'active',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+    });
+    
+    this.leads.unshift(...importedLeads);
+    return importedLeads;
+  }
+
+  async validateEmails(emails) {
+    await this.delay(500);
+    const results = {
+      valid: [],
+      invalid: [],
+      total: emails.length
+    };
+
+    emails.forEach(email => {
+      // Simple validation logic for demo
+      const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && Math.random() > 0.1;
+      
+      if (isValid) {
+        results.valid.push(email);
+      } else {
+        results.invalid.push({
+          email,
+          reason: 'Invalid email format or domain'
+        });
+      }
+    });
+
+    return results;
   }
 }
 

@@ -65,7 +65,7 @@ const CampaignBuilderPage = () => {
     }
   };
 
-  const handleSave = async (status = 'draft') => {
+const handleSave = async (status = 'draft') => {
     if (!campaign.name.trim()) {
       toast.error('Campaign name is required');
       return;
@@ -74,6 +74,17 @@ const CampaignBuilderPage = () => {
     if (campaign.emailSequence.length === 0) {
       toast.error('At least one email is required');
       return;
+    }
+
+    // Show email validation warning for active campaigns
+    if (status === 'active') {
+      const confirmed = window.confirm(
+        'Have you validated your email list? Unvalidated emails may hurt your deliverability. ' +
+        'Click Cancel to validate your emails first, or OK to proceed.'
+      );
+      if (!confirmed) {
+        return;
+      }
     }
 
     try {
@@ -184,6 +195,13 @@ const CampaignBuilderPage = () => {
             loading={saving}
           >
             Save Draft
+          </Button>
+<Button
+            onClick={() => navigate('/email-validator')}
+            variant="outline"
+            icon="CheckCircle"
+          >
+            Validate Emails
           </Button>
           <Button
             onClick={() => handleSave('active')}
