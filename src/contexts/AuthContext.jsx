@@ -60,13 +60,17 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const register = async (email, password, firstName, lastName) => {
+const register = async (email, password, firstName, lastName) => {
     try {
       setLoading(true);
       const response = await authService.register(email, password, firstName, lastName);
       
       if (response.success) {
-        toast.success('Registration successful! Please check your email for verification.');
+        setUser(response.user);
+        setIsAuthenticated(true);
+        localStorage.setItem('auth_token', response.token);
+        localStorage.setItem('user_data', JSON.stringify(response.user));
+        toast.success('Registration successful!');
         return { success: true, user: response.user };
       } else {
         toast.error(response.message || 'Registration failed');
@@ -79,7 +83,6 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
   const logout = async () => {
     try {
       await authService.logout();
@@ -94,56 +97,13 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const verifyEmail = async (email, code) => {
-    try {
-      setLoading(true);
-      const response = await authService.verifyEmail(email, code);
-      
-      if (response.success) {
-        setUser(response.user);
-        setIsAuthenticated(true);
-        localStorage.setItem('auth_token', response.token);
-        localStorage.setItem('user_data', JSON.stringify(response.user));
-        toast.success('Email verified successfully!');
-        return { success: true };
-      } else {
-        toast.error(response.message || 'Email verification failed');
-        return { success: false, message: response.message };
-      }
-    } catch (error) {
-      toast.error('Email verification failed. Please try again.');
-      return { success: false, message: error.message };
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const resendVerification = async (email) => {
-    try {
-      const response = await authService.resendVerification(email);
-      
-      if (response.success) {
-        toast.success('Verification email sent!');
-        return { success: true };
-      } else {
-        toast.error(response.message || 'Failed to send verification email');
-        return { success: false, message: response.message };
-      }
-    } catch (error) {
-      toast.error('Failed to send verification email. Please try again.');
-      return { success: false, message: error.message };
-    }
-  };
-
-  const value = {
+const value = {
     user,
     isAuthenticated,
     loading,
     login,
     register,
-    logout,
-    verifyEmail,
-    resendVerification
+    logout
   };
 
   return (

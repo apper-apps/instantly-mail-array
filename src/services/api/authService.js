@@ -1,4 +1,3 @@
-import { emailVerificationService } from './emailVerificationService';
 
 // Mock user database
 const mockUsers = [
@@ -8,7 +7,6 @@ const mockUsers = [
     password: 'password123',
     firstName: 'Demo',
     lastName: 'User',
-    isEmailVerified: true,
     createdAt: new Date().toISOString()
   }
 ];
@@ -44,15 +42,7 @@ export const authService = {
         message: 'Invalid password'
       };
     }
-    
-    if (!user.isEmailVerified) {
-      return {
-        success: false,
-        message: 'Please verify your email address before logging in'
-      };
-    }
-    
-    const token = generateToken();
+const token = generateToken();
     const { password: _, ...userWithoutPassword } = user;
     
     return {
@@ -73,98 +63,29 @@ export const authService = {
         message: 'User already exists with this email'
       };
     }
-    
-    const newUser = {
+const newUser = {
       Id: userIdCounter++,
       email: email.toLowerCase(),
       password,
       firstName,
       lastName,
-      isEmailVerified: false,
       createdAt: new Date().toISOString()
     };
     
     mockUsers.push(newUser);
     
-    // Send verification email
-    await emailVerificationService.sendVerificationEmail(email);
-    
+    const token = generateToken();
     const { password: _, ...userWithoutPassword } = newUser;
     
     return {
       success: true,
       user: userWithoutPassword,
-      message: 'Registration successful. Please check your email for verification.'
+      token,
+      message: 'Registration successful!'
     };
   },
 
-  async verifyEmail(email, code) {
-    await delay(500);
-    
-    const user = findUserByEmail(email);
-    
-    if (!user) {
-      return {
-        success: false,
-        message: 'User not found'
-      };
-    }
-    
-    if (user.isEmailVerified) {
-      return {
-        success: false,
-        message: 'Email is already verified'
-      };
-    }
-    
-    const isValidCode = await emailVerificationService.verifyCode(email, code);
-    
-    if (!isValidCode) {
-      return {
-        success: false,
-        message: 'Invalid or expired verification code'
-      };
-    }
-    
-    user.isEmailVerified = true;
-    const token = generateToken();
-    const { password: _, ...userWithoutPassword } = user;
-    
-    return {
-      success: true,
-      user: userWithoutPassword,
-      token
-    };
-  },
-
-  async resendVerification(email) {
-    await delay(500);
-    
-    const user = findUserByEmail(email);
-    
-    if (!user) {
-      return {
-        success: false,
-        message: 'User not found'
-      };
-    }
-    
-    if (user.isEmailVerified) {
-      return {
-        success: false,
-        message: 'Email is already verified'
-      };
-    }
-    
-    await emailVerificationService.sendVerificationEmail(email);
-    
-    return {
-      success: true,
-      message: 'Verification email sent successfully'
-    };
-  },
-
-  async logout() {
+async logout() {
     await delay(200);
     return { success: true };
   },

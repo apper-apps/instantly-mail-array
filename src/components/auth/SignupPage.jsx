@@ -82,10 +82,8 @@ const SignupPage = () => {
       formData.lastName
     );
     
-    if (result.success) {
-      navigate('/verify-email', { 
-        state: { email: formData.email } 
-      });
+if (result.success) {
+      navigate('/');
     } else {
       setErrors({ submit: result.message });
     }
