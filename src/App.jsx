@@ -1,15 +1,16 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import Layout from '@/components/organisms/Layout';
-import CampaignsPage from '@/components/pages/CampaignsPage';
-import CampaignBuilderPage from '@/components/pages/CampaignBuilderPage';
-import LeadsPage from '@/components/pages/LeadsPage';
-import InboxPage from '@/components/pages/InboxPage';
-import AnalyticsPage from '@/components/pages/AnalyticsPage';
-import AccountsPage from '@/components/pages/AccountsPage';
-import SettingsPage from '@/components/pages/SettingsPage';
-import EmailTemplateGallery from '@/components/organisms/EmailTemplateGallery';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import Layout from "@/components/organisms/Layout";
+import EmailTemplateGallery from "@/components/organisms/EmailTemplateGallery";
+import LeadsPage from "@/components/pages/LeadsPage";
+import CampaignBuilderPage from "@/components/pages/CampaignBuilderPage";
+import AccountsPage from "@/components/pages/AccountsPage";
+import AnalyticsPage from "@/components/pages/AnalyticsPage";
+import SettingsPage from "@/components/pages/SettingsPage";
+import CampaignsPage from "@/components/pages/CampaignsPage";
+import InboxPage from "@/components/pages/InboxPage";
+import AbTestingPage from "@/components/pages/AbTestingPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/campaigns/new" element={<CampaignBuilderPage />} />
           <Route path="/campaigns/:id/edit" element={<CampaignBuilderPage />} />
           <Route path="/templates" element={<EmailTemplateGallery />} />
+          <Route path="/ab-testing" element={<AbTestingPage />} />
           <Route path="/leads" element={<LeadsPage />} />
           <Route path="/inbox" element={<InboxPage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />

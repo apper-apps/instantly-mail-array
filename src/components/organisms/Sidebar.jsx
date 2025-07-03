@@ -9,6 +9,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 const navigation = [
     { name: 'Campaigns', to: '/campaigns', icon: 'Mail' },
     { name: 'Templates', to: '/templates', icon: 'FileText' },
+    { name: 'A/B Testing', to: '/ab-testing', icon: 'TestTube' },
     { name: 'Leads', to: '/leads', icon: 'Users' },
     { name: 'Inbox', to: '/inbox', icon: 'MessageSquare' },
     { name: 'Analytics', to: '/analytics', icon: 'BarChart3' },

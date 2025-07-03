@@ -4,20 +4,69 @@
     "name": "Q4 Sales Outreach",
     "description": "End-of-year sales campaign targeting enterprise clients",
     "status": "active",
-    "emailSequence": [
+"emailSequence": [
       {
         "id": 1,
         "subject": "Quick question about {{company}}'s Q4 planning",
         "body": "Hi {{firstName}},\n\nI noticed {{company}} has been growing rapidly this year. Are you planning any major initiatives for Q4?\n\nI'd love to share how we've helped similar companies scale their operations.\n\nBest regards,\nSales Team",
         "delay": 0,
-        "delayUnit": "days"
+        "delayUnit": "days",
+        "abTest": {
+          "enabled": true,
+          "variants": [
+            {
+              "id": 1001,
+              "name": "Variant A - Direct",
+              "subject": "Quick question about {{company}}'s Q4 planning",
+              "body": "Hi {{firstName}},\n\nI noticed {{company}} has been growing rapidly this year. Are you planning any major initiatives for Q4?\n\nI'd love to share how we've helped similar companies scale their operations.\n\nBest regards,\nSales Team",
+              "trafficPercentage": 50,
+              "metrics": {
+                "sent": 123,
+                "opened": 49,
+                "clicked": 12,
+                "replied": 6,
+                "conversion_rate": 0.049,
+                "open_rate": 0.398,
+                "click_rate": 0.098
+              }
+            },
+            {
+              "id": 1002,
+              "name": "Variant B - Curiosity",
+              "subject": "{{company}}'s growth caught our attention",
+              "body": "Hi {{firstName}},\n\nYour company's impressive growth this year hasn't gone unnoticed. We've been following {{company}}'s journey and are curious about your Q4 strategy.\n\nWould you be open to a brief conversation about how we've helped similar fast-growing companies?\n\nBest regards,\nSales Team",
+              "trafficPercentage": 50,
+              "metrics": {
+                "sent": 122,
+                "opened": 58,
+                "clicked": 15,
+                "replied": 8,
+                "conversion_rate": 0.066,
+                "open_rate": 0.475,
+                "click_rate": 0.123
+              }
+            }
+          ],
+          "trafficSplit": 50,
+          "testDuration": 7,
+          "winnerCriteria": "open_rate",
+          "status": "active"
+        }
       },
       {
         "id": 2,
         "subject": "Following up on {{company}}'s Q4 plans",
         "body": "Hi {{firstName}},\n\nI wanted to follow up on my previous message about Q4 planning.\n\nWould you be interested in a quick 15-minute call to discuss how we can help {{company}} achieve its goals?\n\nBest,\nSales Team",
         "delay": 3,
-        "delayUnit": "days"
+        "delayUnit": "days",
+        "abTest": {
+          "enabled": false,
+          "variants": [],
+          "trafficSplit": 50,
+          "testDuration": 7,
+          "winnerCriteria": "open_rate",
+          "status": "draft"
+        }
       }
     ],
     "leads": [1, 2, 3, 4, 5],
@@ -49,13 +98,70 @@
     "name": "Product Demo Campaign",
     "description": "Showcasing our new product features to potential customers",
     "status": "paused",
-    "emailSequence": [
+"emailSequence": [
       {
         "id": 1,
         "subject": "See our new features in action",
         "body": "Hi {{firstName}},\n\nWe've just launched some exciting new features that I think {{company}} would find valuable.\n\nWould you like to see a quick demo?\n\nBest,\nProduct Team",
         "delay": 0,
-        "delayUnit": "days"
+        "delayUnit": "days",
+        "abTest": {
+          "enabled": true,
+          "variants": [
+            {
+              "id": 2001,
+              "name": "Variant A - Features",
+              "subject": "See our new features in action",
+              "body": "Hi {{firstName}},\n\nWe've just launched some exciting new features that I think {{company}} would find valuable.\n\nWould you like to see a quick demo?\n\nBest,\nProduct Team",
+              "trafficPercentage": 33,
+              "metrics": {
+                "sent": 52,
+                "opened": 22,
+                "clicked": 6,
+                "replied": 3,
+                "conversion_rate": 0.058,
+                "open_rate": 0.423,
+                "click_rate": 0.115
+              }
+            },
+            {
+              "id": 2002,
+              "name": "Variant B - Benefits",
+              "subject": "New ways to boost {{company}}'s productivity",
+              "body": "Hi {{firstName}},\n\nOur latest product updates could significantly improve {{company}}'s workflow efficiency.\n\nInterested in seeing how these improvements could benefit your team?\n\nBest,\nProduct Team",
+              "trafficPercentage": 34,
+              "metrics": {
+                "sent": 53,
+                "opened": 28,
+                "clicked": 9,
+                "replied": 4,
+                "conversion_rate": 0.075,
+                "open_rate": 0.528,
+                "click_rate": 0.170
+              }
+            },
+            {
+              "id": 2003,
+              "name": "Variant C - Urgency",
+              "subject": "Limited time: Early access to new features",
+              "body": "Hi {{firstName}},\n\nWe're offering select companies early access to our game-changing new features.\n\n{{company}} qualifies for this exclusive preview. Interested?\n\nBest,\nProduct Team",
+              "trafficPercentage": 33,
+              "metrics": {
+                "sent": 51,
+                "opened": 31,
+                "clicked": 11,
+                "replied": 5,
+                "conversion_rate": 0.098,
+                "open_rate": 0.608,
+                "click_rate": 0.216
+              }
+            }
+          ],
+          "trafficSplit": 33,
+          "testDuration": 10,
+          "winnerCriteria": "click_rate",
+          "status": "completed"
+        }
       }
     ],
     "leads": [6, 7, 8],
@@ -87,20 +193,36 @@
     "name": "Holiday Special Offers",
     "description": "Holiday season promotional campaign",
     "status": "completed",
-    "emailSequence": [
+"emailSequence": [
       {
         "id": 1,
         "subject": "🎄 Special holiday offer for {{company}}",
         "body": "Hi {{firstName}},\n\nThe holidays are here and we're offering a special discount just for {{company}}!\n\nGet 30% off our annual plans - valid until December 31st.\n\nInterested in learning more?\n\nHappy holidays,\nMarketing Team",
         "delay": 0,
-        "delayUnit": "days"
+        "delayUnit": "days",
+        "abTest": {
+          "enabled": false,
+          "variants": [],
+          "trafficSplit": 50,
+          "testDuration": 7,
+          "winnerCriteria": "open_rate",
+          "status": "draft"
+        }
       },
       {
         "id": 2,
         "subject": "Last chance: Holiday offer expires soon",
         "body": "Hi {{firstName}},\n\nJust a friendly reminder that our holiday offer expires in 3 days.\n\nDon't miss out on 30% off - this is our biggest discount of the year!\n\nReady to get started?\n\nBest,\nMarketing Team",
         "delay": 7,
-        "delayUnit": "days"
+        "delayUnit": "days",
+        "abTest": {
+          "enabled": false,
+          "variants": [],
+          "trafficSplit": 50,
+          "testDuration": 7,
+          "winnerCriteria": "open_rate",
+          "status": "draft"
+        }
       }
     ],
     "leads": [9, 10, 11, 12],
@@ -132,13 +254,21 @@
     "name": "New Year Follow-up",
     "description": "Following up with prospects after the holidays",
     "status": "draft",
-    "emailSequence": [
+"emailSequence": [
       {
         "id": 1,
         "subject": "Happy New Year! Let's discuss {{company}}'s 2024 goals",
         "body": "Hi {{firstName}},\n\nHappy New Year! I hope you had a wonderful holiday season.\n\nAs we start 2024, I'd love to learn about {{company}}'s priorities for the year.\n\nWould you be open to a brief conversation?\n\nBest wishes,\nSales Team",
         "delay": 0,
-        "delayUnit": "days"
+        "delayUnit": "days",
+        "abTest": {
+          "enabled": false,
+          "variants": [],
+          "trafficSplit": 50,
+          "testDuration": 7,
+          "winnerCriteria": "open_rate",
+          "status": "draft"
+        }
       }
     ],
     "leads": [13, 14, 15],
