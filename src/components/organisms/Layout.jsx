@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
-  const getPageTitle = () => {
+const getPageTitle = () => {
     const path = location.pathname;
     if (path === '/' || path === '/campaigns') return 'Campaigns';
     if (path === '/leads') return 'Leads';
@@ -15,6 +15,9 @@ const Layout = ({ children }) => {
     if (path === '/analytics') return 'Analytics';
     if (path === '/accounts') return 'Email Accounts';
     if (path === '/settings') return 'Settings';
+    if (path === '/login') return 'Login';
+    if (path === '/signup') return 'Sign Up';
+    if (path === '/verify-email') return 'Email Verification';
     if (path.includes('/campaigns/')) return 'Campaign Builder';
     return 'Dashboard';
   };

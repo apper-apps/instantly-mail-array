@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { NavLink, useLocation } from 'react-router-dom';
-import ApperIcon from '@/components/ApperIcon';
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { NavLink, useLocation } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import ApperIcon from "@/components/ApperIcon";
 
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
-  
+  const { user, logout } = useAuth();
 const navigation = [
     { name: 'Campaigns', to: '/campaigns', icon: 'Mail' },
     { name: 'Templates', to: '/templates', icon: 'FileText' },
@@ -62,17 +63,28 @@ const navigation = [
         </nav>
 
         {/* User Profile */}
+{/* User Profile */}
         <div className="px-4 py-4 border-t border-gray-200">
-          <div className="flex items-center">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center">
-              <ApperIcon name="User" className="w-4 h-4 text-primary-600" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center">
+                <ApperIcon name="User" className="w-4 h-4 text-primary-600" />
+              </div>
+              <div className="ml-3">
+                <p className="text-sm font-medium text-gray-900">
+                  {user?.firstName} {user?.lastName}
+                </p>
+                <p className="text-xs text-gray-500">{user?.email}</p>
+              </div>
             </div>
-            <div className="ml-3">
-              <p className="text-sm font-medium text-gray-900">Demo User</p>
-              <p className="text-xs text-gray-500">demo@instantly.com</p>
-            </div>
+            <button
+              onClick={logout}
+              className="p-1 rounded hover:bg-gray-100 transition-colors"
+              title="Logout"
+            >
+              <ApperIcon name="LogOut" className="w-4 h-4 text-gray-600" />
+            </button>
           </div>
-        </div>
       </div>
     </div>
   );
@@ -126,15 +138,27 @@ const navigation = [
               </nav>
 
               {/* User Profile */}
+{/* User Profile */}
               <div className="px-4 py-4 border-t border-gray-200">
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center">
-                    <ApperIcon name="User" className="w-4 h-4 text-primary-600" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-primary-100 to-primary-200 rounded-full flex items-center justify-center">
+                      <ApperIcon name="User" className="w-4 h-4 text-primary-600" />
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-900">
+                        {user?.firstName} {user?.lastName}
+                      </p>
+                      <p className="text-xs text-gray-500">{user?.email}</p>
+                    </div>
                   </div>
-                  <div className="ml-3">
-                    <p className="text-sm font-medium text-gray-900">Demo User</p>
-                    <p className="text-xs text-gray-500">demo@instantly.com</p>
-                  </div>
+                  <button
+                    onClick={logout}
+                    className="p-1 rounded hover:bg-gray-100 transition-colors"
+                    title="Logout"
+                  >
+<ApperIcon name="LogOut" className="w-4 h-4 text-gray-600" />
+                  </button>
                 </div>
               </div>
             </div>

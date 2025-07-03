@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useAuth } from '@/contexts/AuthContext';
 import ApperIcon from '@/components/ApperIcon';
 import Button from '@/components/atoms/Button';
 
 const Header = ({ onMenuClick, title = 'Dashboard' }) => {
+  const { user, logout } = useAuth();
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -26,7 +28,7 @@ const Header = ({ onMenuClick, title = 'Dashboard' }) => {
           </div>
         </div>
 
-        {/* Right side actions */}
+{/* Right side actions */}
         <div className="flex items-center space-x-4">
           {/* Notifications */}
           <button className="p-2 rounded-lg hover:bg-gray-100 transition-colors relative">
@@ -39,12 +41,21 @@ const Header = ({ onMenuClick, title = 'Dashboard' }) => {
             <ApperIcon name="HelpCircle" className="w-5 h-5 text-gray-600" />
           </button>
 
-          {/* Account selector */}
+          {/* User Profile */}
           <div className="flex items-center bg-gray-50 rounded-lg px-3 py-2">
-            <div className="w-6 h-6 bg-gradient-to-br from-success-400 to-success-500 rounded-full flex items-center justify-center mr-2">
-              <ApperIcon name="Check" className="w-3 h-3 text-white" />
+            <div className="w-6 h-6 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center mr-2">
+              <ApperIcon name="User" className="w-3 h-3 text-white" />
             </div>
-            <span className="text-sm font-medium text-gray-700">Account: Active</span>
+            <span className="text-sm font-medium text-gray-700">
+              {user?.firstName} {user?.lastName}
+            </span>
+            <button
+              onClick={logout}
+              className="ml-2 p-1 rounded hover:bg-gray-200 transition-colors"
+              title="Logout"
+            >
+              <ApperIcon name="LogOut" className="w-4 h-4 text-gray-600" />
+            </button>
           </div>
         </div>
       </div>
