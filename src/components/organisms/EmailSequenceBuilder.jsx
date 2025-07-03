@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import ApperIcon from '@/components/ApperIcon';
-import Button from '@/components/atoms/Button';
-import Input from '@/components/atoms/Input';
-import Card from '@/components/atoms/Card';
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import EmailTemplateGallery from "@/components/organisms/EmailTemplateGallery";
+import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
+import Card from "@/components/atoms/Card";
+import Input from "@/components/atoms/Input";
 
 const EmailSequenceBuilder = ({ sequence = [], onChange }) => {
   const [editingIndex, setEditingIndex] = useState(null);
   const [previewIndex, setPreviewIndex] = useState(null);
-
+  const [showTemplateModal, setShowTemplateModal] = useState(false);
+  const [selectedTemplateIndex, setSelectedTemplateIndex] = useState(null);
   const addEmail = () => {
     const newEmail = {
       id: Date.now(),
@@ -40,6 +42,15 @@ const EmailSequenceBuilder = ({ sequence = [], onChange }) => {
     const updatedSequence = [...sequence];
     [updatedSequence[index], updatedSequence[newIndex]] = [updatedSequence[newIndex], updatedSequence[index]];
     onChange(updatedSequence);
+};
+
+  const applyTemplate = (template) => {
+    if (selectedTemplateIndex !== null) {
+      updateEmail(selectedTemplateIndex, 'subject', template.subject);
+      updateEmail(selectedTemplateIndex, 'body', template.body);
+      setShowTemplateModal(false);
+      setSelectedTemplateIndex(null);
+    }
   };
 
   const EmailEditor = ({ email, index, onSave, onCancel }) => (
@@ -87,8 +98,7 @@ const EmailSequenceBuilder = ({ sequence = [], onChange }) => {
           <span className="text-sm text-gray-500">before sending</span>
         </div>
       </div>
-      
-      <div className="flex items-center justify-between pt-4 border-t">
+<div className="flex items-center justify-between pt-4 border-t">
         <div className="flex space-x-2">
           <Button
             onClick={() => setPreviewIndex(index)}
@@ -98,11 +108,19 @@ const EmailSequenceBuilder = ({ sequence = [], onChange }) => {
           >
             Preview
           </Button>
+          <Button
+            onClick={() => setShowTemplateModal(true)}
+            variant="outline"
+            size="sm"
+            icon="Template"
+          >
+            Use Template
+</Button>
         </div>
         <div className="flex space-x-2">
           <Button
             onClick={onCancel}
-            variant="secondary"
+            variant="outline"
             size="sm"
           >
             Cancel
@@ -268,6 +286,46 @@ const EmailSequenceBuilder = ({ sequence = [], onChange }) => {
               </motion.div>
             ))}
           </div>
+        )}
+)}
+      </AnimatePresence>
+
+      {/* Template Modal */}
+      <AnimatePresence>
+        {showTemplateModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white rounded-xl shadow-xl max-w-6xl max-h-[90vh] overflow-hidden"
+            >
+              <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+                <h2 className="text-xl font-semibold text-gray-900">Choose Email Template</h2>
+                <button
+                  onClick={() => {
+                    setShowTemplateModal(false);
+                    setSelectedTemplateIndex(null);
+                  }}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
+                  <ApperIcon name="X" className="w-5 h-5 text-gray-500" />
+                </button>
+              </div>
+              
+              <div className="overflow-y-auto max-h-[calc(90vh-140px)]">
+                <EmailTemplateGallery
+                  onSelectTemplate={applyTemplate}
+                  selectionMode={true}
+                />
+              </div>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

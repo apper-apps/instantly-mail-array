@@ -9,16 +9,18 @@ import InboxPage from '@/components/pages/InboxPage';
 import AnalyticsPage from '@/components/pages/AnalyticsPage';
 import AccountsPage from '@/components/pages/AccountsPage';
 import SettingsPage from '@/components/pages/SettingsPage';
+import EmailTemplateGallery from '@/components/organisms/EmailTemplateGallery';
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Layout>
-        <Routes>
+<Routes>
           <Route path="/" element={<CampaignsPage />} />
           <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/campaigns/new" element={<CampaignBuilderPage />} />
           <Route path="/campaigns/:id/edit" element={<CampaignBuilderPage />} />
+          <Route path="/templates" element={<EmailTemplateGallery />} />
           <Route path="/leads" element={<LeadsPage />} />
           <Route path="/inbox" element={<InboxPage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />

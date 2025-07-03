@@ -6,8 +6,9 @@ import ApperIcon from '@/components/ApperIcon';
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
   
-  const navigation = [
+const navigation = [
     { name: 'Campaigns', to: '/campaigns', icon: 'Mail' },
+    { name: 'Templates', to: '/templates', icon: 'FileText' },
     { name: 'Leads', to: '/leads', icon: 'Users' },
     { name: 'Inbox', to: '/inbox', icon: 'MessageSquare' },
     { name: 'Analytics', to: '/analytics', icon: 'BarChart3' },

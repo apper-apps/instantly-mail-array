@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "name": "Welcome Series - New Customer",
+    "category": "business",
+    "subject": "Welcome to {{company_name}} - Let's get you started!",
+    "body": "Hi {{first_name}},\n\nWelcome to {{company_name}}! We're thrilled to have you join our community.\n\nHere's what you can expect in the coming days:\n• A comprehensive onboarding guide\n• Tips to maximize your experience\n• Direct access to our support team\n\nTo get started, simply click the button below and we'll walk you through the setup process.\n\nIf you have any questions, don't hesitate to reach out to us at support@company.com.\n\nBest regards,\nThe {{company_name}} Team",
+    "preview": "Welcome to our platform! We're excited to have you join our community and want to help you get started on the right foot...",
+    "createdAt": "2024-01-15",
+    "updatedAt": "2024-01-15"
+  },
+  {
+    "Id": 2,
+    "name": "Product Launch Announcement",
+    "category": "marketing",
+    "subject": "🚀 Introducing {{product_name}} - The Future is Here!",
+    "body": "Dear {{first_name}},\n\nWe're excited to announce the launch of {{product_name}}, our most innovative solution yet!\n\nAfter months of development and testing, we're proud to introduce features that will revolutionize how you:\n• Streamline your workflow\n• Boost productivity by 40%\n• Collaborate seamlessly with your team\n\n🎉 SPECIAL LAUNCH OFFER 🎉\nFor the next 48 hours, get 30% off your first year with code LAUNCH30\n\nReady to experience the future? Click below to learn more.\n\nBest,\n{{sender_name}}",
+    "preview": "We're thrilled to announce our latest product launch! Discover innovative features that will transform your workflow and boost productivity...",
+    "createdAt": "2024-01-20",
+    "updatedAt": "2024-01-20"
+  },
+  {
+    "Id": 3,
+    "name": "Follow-up After Meeting",
+    "category": "business",
+    "subject": "Great meeting you today, {{first_name}}!",
+    "body": "Hi {{first_name}},\n\nIt was wonderful meeting you today and discussing {{topic}}. I really enjoyed our conversation about {{specific_detail}}.\n\nAs promised, I'm attaching the resources we discussed:\n• {{resource_1}}\n• {{resource_2}}\n• {{resource_3}}\n\nNext steps:\n1. Review the attached materials\n2. Schedule a follow-up call for next week\n3. Connect with the relevant team members\n\nPlease let me know if you have any questions or need additional information.\n\nLooking forward to our continued collaboration!\n\nBest regards,\n{{sender_name}}",
+    "preview": "Thank you for the great meeting today! Here are the resources we discussed and our next steps moving forward...",
+    "createdAt": "2024-01-18",
+    "updatedAt": "2024-01-18"
+  },
+  {
+    "Id": 4,
+    "name": "Monthly Newsletter",
+    "category": "newsletter",
+    "subject": "{{month}} Newsletter - Updates, Tips & Success Stories",
+    "body": "Hello {{first_name}},\n\nWelcome to our {{month}} newsletter! Here's what's been happening:\n\n📈 THIS MONTH'S HIGHLIGHTS\n• Product updates and new features\n• Customer success stories\n• Industry insights and trends\n\n💡 FEATURED TIP\n{{monthly_tip}}\n\n🎯 UPCOMING EVENTS\n• {{event_1}} - {{date_1}}\n• {{event_2}} - {{date_2}}\n• {{event_3}} - {{date_3}}\n\n📚 RECOMMENDED READING\n{{article_title}} - {{article_link}}\n\nThanks for being part of our community!\n\nBest,\nThe {{company_name}} Team",
+    "preview": "Your monthly update is here! Discover new features, success stories, upcoming events, and valuable insights from our team...",
+    "createdAt": "2024-01-10",
+    "updatedAt": "2024-01-10"
+  },
+  {
+    "Id": 5,
+    "name": "Birthday Wishes",
+    "category": "personal",
+    "subject": "🎉 Happy Birthday, {{first_name}}!",
+    "body": "Dear {{first_name}},\n\n🎂 Happy Birthday! 🎂\n\nOn your special day, we want to take a moment to celebrate you and all the joy you bring to our community.\n\nAs a birthday gift from us, enjoy:\n• 20% off your next purchase with code BIRTHDAY20\n• Free shipping on all orders this month\n• Early access to our upcoming sale\n\nWe hope your birthday is filled with laughter, love, and all your favorite things.\n\nHere's to another year of adventures and achievements!\n\nWarmest wishes,\nThe {{company_name}} Team 🎈",
+    "preview": "It's your special day! We're celebrating you with birthday wishes and special offers to make your day even brighter...",
+    "createdAt": "2024-01-12",
+    "updatedAt": "2024-01-12"
+  },
+  {
+    "Id": 6,
+    "name": "Abandoned Cart Recovery",
+    "category": "marketing",
+    "subject": "Don't forget! Your items are waiting for you",
+    "body": "Hi {{first_name}},\n\nWe noticed you left some great items in your cart. Don't worry - we've saved them for you!\n\nYour cart includes:\n{{cart_items}}\n\nTotal: {{cart_total}}\n\n⏰ HURRY! These items are popular and stock is limited.\n\nTo complete your purchase, simply click the button below:\n\n[COMPLETE YOUR ORDER]\n\nNeed help? Our customer service team is here to assist you:\n• Live chat: Available 24/7\n• Phone: 1-800-123-4567\n• Email: support@company.com\n\nShop now and enjoy free shipping on orders over $50!\n\nHappy shopping,\nThe {{company_name}} Team",
+    "preview": "Your cart is waiting! Complete your purchase now and enjoy free shipping on orders over $50. Limited stock available...",
+    "createdAt": "2024-01-22",
+    "updatedAt": "2024-01-22"
+  },
+  {
+    "Id": 7,
+    "name": "Thank You for Your Purchase",
+    "category": "business",
+    "subject": "Thank you for your order #{{order_number}}",
+    "body": "Dear {{first_name}},\n\nThank you for your recent purchase! We're thrilled that you chose {{company_name}}.\n\nORDER DETAILS:\nOrder #: {{order_number}}\nDate: {{order_date}}\nTotal: {{order_total}}\n\nYour order is being processed and will be shipped within 1-2 business days. You'll receive a tracking number once it's on its way.\n\nIn the meantime:\n• Track your order: {{tracking_link}}\n• Download your receipt: {{receipt_link}}\n• Need help? Contact us: {{support_email}}\n\nWe'd love to hear about your experience! Please consider leaving a review when you receive your order.\n\nThank you again for choosing us!\n\nBest regards,\nThe {{company_name}} Team",
+    "preview": "Thank you for your purchase! Your order is being processed and will ship within 1-2 business days. Track your order and download your receipt...",
+    "createdAt": "2024-01-25",
+    "updatedAt": "2024-01-25"
+  },
+  {
+    "Id": 8,
+    "name": "Webinar Invitation",
+    "category": "marketing",
+    "subject": "You're invited: {{webinar_title}} - {{webinar_date}}",
+    "body": "Hi {{first_name}},\n\nYou're invited to join our exclusive webinar!\n\n📅 WEBINAR DETAILS\nTitle: {{webinar_title}}\nDate: {{webinar_date}}\nTime: {{webinar_time}}\nDuration: {{webinar_duration}}\n\n🎯 WHAT YOU'LL LEARN:\n• {{learning_point_1}}\n• {{learning_point_2}}\n• {{learning_point_3}}\n\n👨‍💼 FEATURED SPEAKER\n{{speaker_name}}, {{speaker_title}}\n{{speaker_bio}}\n\n🎁 BONUS: All attendees will receive:\n• Exclusive resource guide\n• 15-minute free consultation\n• Access to the recording\n\nSpaces are limited, so secure your spot now!\n\n[REGISTER NOW]\n\nSee you there!\n\nBest,\n{{sender_name}}",
+    "preview": "Join our exclusive webinar and learn from industry experts! Limited spaces available, plus bonus resources for all attendees...",
+    "createdAt": "2024-01-28",
+    "updatedAt": "2024-01-28"
+  },
+  {
+    "Id": 9,
+    "name": "Feedback Request",
+    "category": "business",
+    "subject": "How was your experience with {{company_name}}?",
+    "body": "Hi {{first_name}},\n\nWe hope you're enjoying your recent purchase from {{company_name}}!\n\nYour feedback is incredibly valuable to us and helps us improve our products and services for everyone.\n\nWould you mind taking 2 minutes to share your experience?\n\n⭐ RATE YOUR EXPERIENCE\n[5 STARS] [4 STARS] [3 STARS] [2 STARS] [1 STAR]\n\nYour honest feedback helps us:\n• Improve our products\n• Enhance customer service\n• Better serve our community\n\nAs a thank you for your time, we'll send you a 10% discount code for your next purchase!\n\n[LEAVE A REVIEW]\n\nIf you experienced any issues, please don't hesitate to reach out to our support team at {{support_email}}.\n\nThank you for being a valued customer!\n\nBest regards,\nThe {{company_name}} Team",
+    "preview": "We'd love to hear about your experience! Your feedback helps us improve and serve you better. Plus, get 10% off your next purchase...",
+    "createdAt": "2024-01-30",
+    "updatedAt": "2024-01-30"
+  },
+  {
+    "Id": 10,
+    "name": "Holiday Greetings",
+    "category": "personal",
+    "subject": "Season's Greetings from {{company_name}}",
+    "body": "Dear {{first_name}},\n\nAs the holiday season approaches, we want to take a moment to express our heartfelt gratitude for your continued support and trust in {{company_name}}.\n\nThis year has been incredible, and none of it would have been possible without amazing customers like you.\n\n🎄 HOLIDAY HIGHLIGHTS:\n• {{achievement_1}}\n• {{achievement_2}}\n• {{achievement_3}}\n\n🎁 OUR GIFT TO YOU:\nEnjoy 25% off everything in our store with code HOLIDAY25\nValid through {{expiry_date}}\n\nAs we look forward to the new year, we're excited to continue serving you with:\n• New products and features\n• Enhanced customer service\n• More ways to achieve your goals\n\nWishing you and your loved ones a wonderful holiday season filled with joy, peace, and prosperity.\n\nWarm regards,\nEveryone at {{company_name}} 🎅",
+    "preview": "Season's greetings from our family to yours! Thank you for an amazing year, plus enjoy 25% off everything with our holiday gift to you...",
+    "createdAt": "2024-02-01",
+    "updatedAt": "2024-02-01"
+  },
+  {
+    "Id": 11,
+    "name": "Event Reminder",
+    "category": "marketing",
+    "subject": "Reminder: {{event_name}} starts in {{time_until}}",
+    "body": "Hi {{first_name}},\n\nThis is a friendly reminder that {{event_name}} is starting {{time_until}}!\n\n📅 EVENT DETAILS\nEvent: {{event_name}}\nDate: {{event_date}}\nTime: {{event_time}}\nLocation: {{event_location}}\n\n🎯 WHAT TO EXPECT:\n• {{agenda_item_1}}\n• {{agenda_item_2}}\n• {{agenda_item_3}}\n\n📋 BEFORE YOU ATTEND:\n• Download the event app: {{app_link}}\n• Review the agenda: {{agenda_link}}\n• Prepare your questions for the Q&A session\n\n🎟️ YOUR TICKET\nTicket #: {{ticket_number}}\nEntry Code: {{entry_code}}\n\nCan't make it? No problem! The event will be recorded and available to all registered attendees.\n\nWe can't wait to see you there!\n\nBest,\nThe {{event_organizer}} Team",
+    "preview": "Don't forget! Your registered event starts soon. Here are all the details you need to know, plus your ticket information...",
+    "createdAt": "2024-02-05",
+    "updatedAt": "2024-02-05"
+  },
+  {
+    "Id": 12,
+    "name": "Re-engagement Campaign",
+    "category": "marketing",
+    "subject": "We miss you, {{first_name}}! Here's 30% off to welcome you back",
+    "body": "Hi {{first_name}},\n\nWe've noticed you haven't visited us in a while, and we miss you!\n\nA lot has changed since your last visit:\n• {{update_1}}\n• {{update_2}}\n• {{update_3}}\n\n💝 WELCOME BACK OFFER\nAs a special welcome back gift, enjoy 30% off your next purchase with code WELCOME30\n\nThis exclusive offer is valid for the next 7 days only!\n\n🔥 POPULAR RIGHT NOW:\n• {{popular_item_1}} - {{price_1}}\n• {{popular_item_2}} - {{price_2}}\n• {{popular_item_3}} - {{price_3}}\n\nWhy our customers love us:\n⭐ \"{{testimonial_1}}\" - {{customer_1}}\n⭐ \"{{testimonial_2}}\" - {{customer_2}}\n\nReady to come back? Click below to start shopping!\n\n[SHOP NOW]\n\nWe'd love to have you back in our community!\n\nBest,\nThe {{company_name}} Team",
+    "preview": "We miss you! Come back and discover what's new, plus enjoy 30% off your next purchase with our exclusive welcome back offer...",
+    "createdAt": "2024-02-08",
+    "updatedAt": "2024-02-08"
+  }
+]
