@@ -306,9 +306,8 @@ type="number"
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
-              <div>
+<div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Winner Criteria</label>
-<label className="block text-sm font-medium text-gray-700 mb-1">Winner Criteria</label>
                 <select
                   value={email.abTest?.winnerCriteria || 'open_rate'}
                   onChange={(e) => updateEmail(index, 'abTest', {
@@ -682,10 +681,9 @@ return (
                   </AnimatePresence>
                 </Card>
               </motion.div>
-            ))}
+))}
           </div>
         )}
-)}
       </AnimatePresence>
       {/* Template Modal */}
       <AnimatePresence>
